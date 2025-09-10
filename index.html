@@ -1,0 +1,180 @@
+<!--
+  HotSticker - English landing page
+  Place this file at the repository root (index.html). Add your logo as `logo.png` in the same folder.
+
+  Quick GitHub Pages deploy:
+  1) Create a new repo named `hotsticker-app.github.io` (or use your existing repo)
+  2) Commit index.html and assets (logo.png, screenshots/) to the main branch
+  3) Visit Settings → Pages and ensure the source is the main branch (root) — GitHub will serve https://hotsticker-app.github.io
+
+  If you prefer building with React or want a multi-page site, tell me and I'll provide that version.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HotSticker — Create & Share Stickers</title>
+  <meta name="description" content="HotSticker — Make custom stickers from photos in seconds. Offline AI background removal, one-tap export to all major chat apps, and easy sharing." />
+
+  <!-- Tailwind via CDN for quick deploy (no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Social / Open Graph -->
+  <meta property="og:title" content="HotSticker — Create & Share Stickers" />
+  <meta property="og:description" content="Turn photos into stickers in seconds. Offline AI cutout, customizable text, and one-tap export to WhatsApp, Telegram, WeChat and more." />
+  <meta property="og:image" content="/logo.png" />
+  <meta name="theme-color" content="#111827" />
+
+  <style>
+    /* small custom styles */
+    .feature-card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); }
+    .glass { backdrop-filter: blur(6px); }
+  </style>
+</head>
+<body class="bg-gray-900 text-slate-100 antialiased leading-normal">
+  <header class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3">
+      <img src="logo.png" alt="HotSticker logo" class="w-12 h-12 object-contain" />
+      <div>
+        <h1 class="text-xl font-semibold">HotSticker</h1>
+        <p class="text-xs text-slate-400 -mt-0.5">Create • Customize • Share</p>
+      </div>
+    </a>
+    <nav class="hidden md:flex gap-6 items-center text-sm text-slate-300">
+      <a href="#features" class="hover:text-white">Features</a>
+      <a href="#how" class="hover:text-white">How It Works</a>
+      <a href="#download" class="hover:text-white">Download</a>
+      <a href="#contact" class="px-4 py-2 border border-slate-700 rounded-md hover:bg-slate-800">Get Early Access</a>
+    </nav>
+    <button id="mobileMenuBtn" class="md:hidden p-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6">
+    <!-- Hero -->
+    <section class="grid md:grid-cols-2 gap-8 items-center py-12">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">Make stickers in seconds — share them everywhere.</h2>
+        <p class="mt-4 text-lg text-slate-300">HotSticker turns your photos, selfies, and pet pics into polished stickers. Fast AI cutout, rich text styling, and one-tap export for every chat app.</p>
+
+        <div class="mt-6 flex gap-3 flex-wrap">
+          <a id="download" href="#download" class="inline-flex items-center gap-2 bg-pink-500 hover:brightness-105 px-5 py-3 rounded-full text-white font-medium">Download Beta</a>
+          <a href="#features" class="inline-flex items-center gap-2 border border-slate-700 px-4 py-3 rounded-full text-slate-200">See Features</a>
+        </div>
+
+        <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-400">
+          <li>• Offline AI background removal — privacy-first</li>
+          <li>• Export to WhatsApp, Telegram, WeChat, iMessage, Discord</li>
+          <li>• Rich text & style controls — fonts, colors, stroke</li>
+          <li>• One-tap share and save to sticker packs</li>
+        </ul>
+      </div>
+
+      <div class="relative">
+        <div class="bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-6 glass border border-slate-700 shadow-lg">
+          <div class="flex items-center gap-4">
+            <div class="w-20 h-20 bg-slate-800 rounded-lg flex items-center justify-center">
+              <img src="logo.png" alt="logo" class="w-16 h-16 object-contain" />
+            </div>
+            <div>
+              <p class="text-slate-200 font-semibold">HotSticker</p>
+              <p class="text-sm text-slate-400">Sticker creator • Offline AI</p>
+            </div>
+          </div>
+
+          <div class="mt-6 grid grid-cols-2 gap-2">
+            <div class="p-3 feature-card rounded-lg">
+              <p class="text-xs text-slate-300">AI Cutout</p>
+              <p class="text-sm text-slate-100 font-medium">Remove background offline</p>
+            </div>
+            <div class="p-3 feature-card rounded-lg">
+              <p class="text-xs text-slate-300">Text Tools</p>
+              <p class="text-sm text-slate-100 font-medium">Fonts, color, stroke, size</p>
+            </div>
+            <div class="p-3 feature-card rounded-lg">
+              <p class="text-xs text-slate-300">Export</p>
+              <p class="text-sm text-slate-100 font-medium">Multiple chat platforms</p>
+            </div>
+            <div class="p-3 feature-card rounded-lg">
+              <p class="text-xs text-slate-300">Share</p>
+              <p class="text-sm text-slate-100 font-medium">One tap to friends</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute -right-8 -bottom-6 w-56 h-40 bg-gradient-to-tr from-pink-600 to-pink-400 rounded-2xl opacity-20 blur-2xl"></div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-12">
+      <h3 class="text-2xl font-bold">Features</h3>
+      <p class="text-slate-400 mt-2">Everything you need to make unique stickers — fast.</p>
+
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl border border-slate-700 feature-card">
+          <h4 class="font-semibold">Offline AI Cutout</h4>
+          <p class="mt-2 text-slate-400 text-sm">Privacy-first background removal that runs locally — no uploads, no tracking.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-slate-700 feature-card">
+          <h4 class="font-semibold">Rich Text & Styling</h4>
+          <p class="mt-2 text-slate-400 text-sm">Add captions, choose fonts, color, stroke, and fine-tune layout for perfect results.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-slate-700 feature-card">
+          <h4 class="font-semibold">Multi-Platform Export</h4>
+          <p class="mt-2 text-slate-400 text-sm">Export sticker packs or single stickers to WhatsApp, Telegram, iMessage, WeChat, Discord and more.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="py-12">
+      <h3 class="text-2xl font-bold">How it works</h3>
+      <ol class="mt-4 list-decimal list-inside text-slate-300">
+        <li>Upload or take a photo.</li>
+        <li>Use the AI cutout tool to remove background (one-tap).</li>
+        <li>Add text, stickers or effects and adjust styling.</li>
+        <li>Export or share directly to any chat app.</li>
+      </ol>
+    </section>
+
+    <!-- Download / CTA -->
+    <section class="py-12" aria-labelledby="download">
+      <h3 class="text-2xl font-bold">Get HotSticker</h3>
+      <p class="text-slate-400 mt-2">Beta available soon. Join the waitlist or download the release when ready.</p>
+
+      <div class="mt-6 flex gap-4 flex-wrap">
+        <a href="#" class="inline-flex items-center gap-3 px-5 py-3 rounded-md bg-pink-500 text-white font-medium">Download for iOS</a>
+        <a href="#" class="inline-flex items-center gap-3 px-5 py-3 rounded-md border border-slate-700 text-slate-200">Download for Android</a>
+        <a href="#" class="inline-flex items-center gap-3 px-4 py-3 rounded-md text-sm border border-slate-700">Join Waitlist</a>
+      </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer id="contact" class="py-12 border-t border-slate-800 text-slate-400">
+      <div class="max-w-3xl">
+        <h4 class="text-lg font-semibold text-slate-100">Contact</h4>
+        <p class="mt-2 text-sm">Questions or partnership inquiries? Email us at <a href="mailto:hello@hotsticker.app" class="text-pink-400">hello@hotsticker.app</a></p>
+
+        <p class="mt-6 text-xs">© <span id="year"></span> HotSticker. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile nav handler (simple)
+    const btn = document.getElementById('mobileMenuBtn');
+    btn.addEventListener('click', () => {
+      alert('Use desktop navigation for now — I can add a mobile menu if you want.');
+    });
+  </script>
+</body>
+</html>
